@@ -18,9 +18,8 @@ let newPath = null;
 
 
 async function activate(context) {
-	let disposable = vscode.commands.registerCommand('ext.helloWorld', async function () {
+	let disposable = vscode.commands.registerCommand('ext.Ext_ext', async function () {
 		language = await vscode.window.showInformationMessage('Your favorite language ;)', 'Python', 'JS', 'React-JS', 'TS', 'React-TS', 'HTML');
-		console.log(language);
 		vscode.workspace.onDidCreateFiles(async (e) => {
 
 			path = e.files[0].path;
@@ -38,7 +37,6 @@ async function activate(context) {
 			vscode.commands.executeCommand('workbench.action.closeActiveEditor').then(async () => {
 				ext = await extention(language);
 				newPath = path + ext;
-				console.log(newPath);
 				await fs.rename(path, newPath, (err) => {
 					if (err) throw err;
 					vscode.workspace.openTextDocument(newPath).then(async (docu) => {
@@ -83,6 +81,9 @@ function deactivate() {
 	newPath = null;
 
 }
+// 
+
+
 
 
 

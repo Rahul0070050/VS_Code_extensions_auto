@@ -3,6 +3,7 @@
   "displayName": "ext",
   "description": "",
   "version": "0.0.1",
+  "publisher": "rahul",
   "engines": {
     "vscode": "^1.57.0"
   },
@@ -10,14 +11,14 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:ext.helloWorld"
+    "onCommand:ext.Ext_ext"
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "ext.helloWorld",
-        "title": "Hello World"
+        "command": "ext.Ext_ext",
+        "title": "working...."
       }
     ]
   },
