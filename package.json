@@ -3,7 +3,7 @@
   "displayName": "ext",
   "description": "",
   "version": "0.0.1",
-  "publisher": "rahul",
+  "publisher": "rahulor",
   "engines": {
     "vscode": "^1.57.0"
   },
