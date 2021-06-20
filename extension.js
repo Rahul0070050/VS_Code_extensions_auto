@@ -10,14 +10,21 @@ const fs = require('fs');
 /**
  * @param {vscode.ExtensionContext} context
  */
+let language = null;
+let path = null;
+let fileName = null;
+let ext = null;
+let newPath = null;
+
 
 async function activate(context) {
 	let disposable = vscode.commands.registerCommand('ext.helloWorld', async function () {
-		let language = await vscode.window.showInformationMessage('Your favorite language ;)', 'Python', 'JS', 'React-JS', 'TS', 'React-TS', 'HTML');
+		language = await vscode.window.showInformationMessage('Your favorite language ;)', 'Python', 'JS', 'React-JS', 'TS', 'React-TS', 'HTML');
+		console.log(language);
 		vscode.workspace.onDidCreateFiles(async (e) => {
-			
-			let path = e.files[0].path;
-			let fileName = path.split('/');
+
+			path = e.files[0].path;
+			fileName = path.split('/');
 			fileName = fileName[fileName.length - 1];
 
 			if (fs.lstatSync(path).isDirectory()) {
@@ -27,21 +34,20 @@ async function activate(context) {
 			if (fileName.includes('.')) {
 				return
 			}
-			
-			vscode.commands.executeCommand('workbench.action.closeActiveEditor').then(async() => {
-				let newPath = await path+extention(language);
+
+			vscode.commands.executeCommand('workbench.action.closeActiveEditor').then(async () => {
+				ext = await extention(language);
+				newPath = path + ext;
 				console.log(newPath);
-				await fs.rename(path,newPath,(err) => {
-					if(err) throw err;
+				await fs.rename(path, newPath, (err) => {
+					if (err) throw err;
+					vscode.workspace.openTextDocument(newPath).then(async (docu) => {
+						await vscode.window.showTextDocument(docu, 1, false)
+					})
 				});
 
-				vscode.workspace.openTextDocument(newPath).then((docu) => {
-					vscode.window.showTextDocument(docu,1,false).then(() => {
-						return;
-					});
-				})
 			});
-			
+
 
 			function extention(language) {
 				switch (language) {
@@ -69,7 +75,14 @@ async function activate(context) {
 }
 
 // this method is called when your extension is deactivated
-function deactivate() { }
+function deactivate() {
+	language = null;
+	path = null;
+	fileName = null;
+	ext = null;
+	newPath = null;
+
+}
 
 
 
