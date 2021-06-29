@@ -1,14 +1,18 @@
 {
   "name": "ext",
-  "displayName": "ext",
-  "description": "",
-  "version": "0.0.1",
+  "displayName": "Autofill_extensions",
+  "description": "autofill file extentions",
+  "version": "0.1.3",
+  "icon": "public/icon.jpg",
   "publisher": "rahulor",
   "engines": {
     "vscode": "^1.57.0"
   },
   "categories": [
-    "Other"
+    "Programming_Languages",
+    "Languages",
+    "Extension Packs",
+    "Snippets"
   ],
   "activationEvents": [
     "onCommand:ext.Ext_ext"
@@ -18,7 +22,7 @@
     "commands": [
       {
         "command": "ext.Ext_ext",
-        "title": "working...."
+        "title": "start_Ext_V3"
       }
     ]
   },

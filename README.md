@@ -1,10 +1,9 @@
 ## Features Autofill extension
 
-# 'Python', 'JS', 'React-JS', 'TS', 'React-TS', 'HTML'
+# Python, JS, React-JS, TS, React-TS, HTML
 
 ## Requirements Type
 
-# ctrl + shift + P : 'ext.Ext_ext' 
+## ctrl + shift + P : 'start_Ext_V3' 
 
-## -V
-### 1.0.0
+### V : 1.3.0

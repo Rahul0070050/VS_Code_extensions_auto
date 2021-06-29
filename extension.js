@@ -72,12 +72,6 @@ async function activate(context) {
 	context.subscriptions.push(disposable);
 }
 
-(() => {
-	vscode.commands.executeCommand('ext.Ext_ext').then(() => {
-		vscode.window.showInformationMessage('running...');	
-	})
-})()
-
 // this method is called when your extension is deactivated
 function deactivate() {
 	language = null;
