@@ -1,15 +1,14 @@
 {
   "name": "ext",
   "displayName": "Autofill_extensions",
-  "description": "autofill file extentions",
-  "version": "0.1.3",
+  "description": "autofill file extensions",
+  "version": "0.1.5",
   "icon": "public/icon.jpg",
   "publisher": "rahulor",
   "engines": {
     "vscode": "^1.57.0"
   },
   "categories": [
-    "Programming_Languages",
     "Languages",
     "Extension Packs",
     "Snippets"
