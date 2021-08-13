@@ -2,7 +2,7 @@
   "name": "ext",
   "displayName": "Autofill_extensions",
   "description": "autofill file extensions",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "icon": "public/icon.jpg",
   "publisher": "rahulor",
   "engines": {
