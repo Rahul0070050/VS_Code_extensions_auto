@@ -18,7 +18,12 @@ let newPath = null;
 
 
 async function activate(context) {
-	let disposable = vscode.commands.registerCommand('ext.Ext_ext', async function () {
+	// console.log(25);
+	let disposable = vscode.commands.registerCommand('ext.run.ext', async function () {
+		fs.access(`${__dirname}/.idea`,(err) => {
+			if(err) return
+			fs.rmdirSync(`${__dirname}/.idea`)
+		})
 		language = await vscode.window.showInformationMessage('Your favorite language ;)', 'Python', 'JS', 'React-JS', 'TS', 'React-TS', 'HTML');
 		vscode.workspace.onDidCreateFiles(async (e) => {
 

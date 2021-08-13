@@ -14,14 +14,14 @@
     "Snippets"
   ],
   "activationEvents": [
-    "onCommand:ext.Ext_ext"
+    "onCommand:ext.run.ext"
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "ext.Ext_ext",
-        "title": "start_Ext_V3"
+        "command": "ext.run.ext",
+        "title": "run.ext"
       }
     ]
   },
