@@ -6,7 +6,7 @@
   "icon": "public/icon.jpg",
   "publisher": "rahulor",
   "engines": {
-    "vscode": "^1.57.0"
+    "vscode": "^1.60.0"
   },
   "categories": [
     "Languages",
@@ -14,16 +14,11 @@
     "Snippets"
   ],
   "activationEvents": [
-    "onCommand:ext.run.ext"
+    "onStartupFinished"
   ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "ext.run.ext",
-        "title": "run.ext"
-      }
-    ]
+
   },
   "scripts": {
     "lint": "eslint .",

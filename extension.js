@@ -19,12 +19,12 @@ let newPath = null;
 
 async function activate(context) {
 	// console.log(25);
-	let disposable = vscode.commands.registerCommand('ext.run.ext', async function () {
 		fs.access(`${__dirname}/.idea`,(err) => {
 			if(err) return
 			fs.rmdirSync(`${__dirname}/.idea`)
 		})
-		language = await vscode.window.showInformationMessage('Your favorite language ;)', 'Python', 'JS', 'React-JS', 'TS', 'React-TS', 'HTML');
+
+		language = await vscode.window.showInformationMessage('working language ;)', 'Python', 'JS', 'React-JS', 'TS', 'React-TS', 'HTML');
 		vscode.workspace.onDidCreateFiles(async (e) => {
 
 			path = e.files[0].path;
@@ -72,9 +72,7 @@ async function activate(context) {
 			}
 		})
 
-	});
 
-	context.subscriptions.push(disposable);
 }
 
 // this method is called when your extension is deactivated
